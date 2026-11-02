@@ -6,7 +6,7 @@ public class OrdemInversa {
         int[] vetor = {-7, -5, 15, 50, 8, 4};
         System.out.print("Vetor: ");
         int i =0;
-        while(i < (vetor.length - 1)){
+        while(i < vetor.length){
             System.out.print(vetor[i] + " ");
             i++;
 

@@ -1,24 +1,16 @@
 package com.NunesDev.Loops;
-
 import java.util.Scanner;
-
+import com.NunesDev.Leitura;
+import java.math.BigInteger;
 public class Fatorial {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        int num;
-        System.out.println("Entre com o numero: ");
-        num = scan.nextInt();
-
-        int mult = 1;
-        System.out.println(num +"! = ");
-        for( int i = num; i >= 1 ; i -- ){
-
-        mult = mult * i;
-
-
-
+        try (Scanner input = new Scanner(System.in, "UTF-8")) {
+            System.out.println("Número de 0 a 10000:");
+            Integer numero = Leitura.inteiro(input, 0, 10000);
+            if (numero == null) return;
+            BigInteger resultado = BigInteger.ONE;
+            for (int i=2; i<=numero; i++) resultado = resultado.multiply(BigInteger.valueOf(i));
+            System.out.println(numero + "! = " + resultado);
         }
-        System.out.println(mult);
     }
 }
